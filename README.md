@@ -1,6 +1,6 @@
 # CS2050
-__Course materials for MSU CS 2050 - Computer Science 2__
 
+Course materials for MSU CS 2050 - Computer Science 2
 
 The Python files/modules that we have created and will be using later on in the semester are below. 
 Be sure that using any of these in another Python program that you place them in same directory as one another. 
