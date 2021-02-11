@@ -11,7 +11,8 @@ class Stack:
         if len(self.items) <= 10:
             return "Field 'items' = " + str(self.items)
         else:
-            return "Field 'items' = " + str(self.items[0:5]) + '[,...]'
+            return "Field 'items' = " + str(self.items[0:5]) + \
+        '[,...]' + str(self.items[-5:])
 
     def isEmpty(self):
         """ return True if stack has zero items, False otherwise """
@@ -38,14 +39,14 @@ class TestStack(unittest.TestCase):
     def testPush(self):
         s = Stack()
         # ADD LINES NEEDED HERE FOR THIS TEST TO PASS
-        self.assertEqual(s.items, [5,8])
+        self.assertIn("[5, 8]", str(s))
 
     def testPop(self):
         s = Stack()
+        s.push(3)
         # ADD LINE(S) NEEDED HERE FOR THIS TEST TO PASS
         popped_item = s.pop()
         self.assertEqual(popped_item, 7)
 
 if __name__ == '__main__':
-    print("run as a standalone program")
     unittest.main()
