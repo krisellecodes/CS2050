@@ -9,9 +9,9 @@ For example, when using stack.py in another Python program, then stack.py and yo
 __NOTE__: All of the following files have some unit tests that fail, either because the test set up needs to be fixed, or because there is a bug in a class/function implementation. This intentional in order to offer you additional coding practice opportunities. By reading and fixing these flaws you will gain additional practice coding, and can increase your understanding of how the data structures/algorithms we are studying behave. Although this is ungraded, it  it is recommended that you download these files and modify/fix each of them until all of the unit tests pass. Without a doubt, this will help you to succeed in the course. 
 
 ### Core classes (we will be using these again!)
-* stack.py - a basic stack class with push and pop operations
-* queue.py - a queue class with enqueue and dequeue methods
-* deque.py - a double-ended queue with addFront, addRear, removeFront, and removeRear methods
+* stack.py - a basic Stack class with push and pop operations
+* queue.py - a Queue class with enqueue and dequeue methods
+* deque.py - a double-ended queue class (Deque) with addFront, addRear, removeFront, and removeRear methods
 * lists.py - implementations of Node, UnorderedList, and OrderedList linked list classes 
 
 ### Additional classes/programs
