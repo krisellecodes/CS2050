@@ -6,7 +6,7 @@ The Python files/modules that we have created and will be using later on in the 
 Be sure that using any of these in another Python program that you place them in same directory as one another. 
 For example, when using stack.py in another Python program, then stack.py and your_new_program.py should be in the same directory. 
 
-__NOTE__: All of the following files have some unit tests that fail, either because the test set up needs to be fixed, or because there is a bug in a class/function implementation. This intentional in order to offer you additional coding practice opportunities. By reading and fixing these flaws you will gain additional practice coding, and can increase your understanding of how the data structures/algorithms we are studying behave. Although this is ungraded, it  it is recommended that you download these files and modify/fix each of them until all of the unit tests pass. Without a doubt, this will help you to succeed in the course. 
+__NOTE__: All of the following files have some unit tests that fail, either because the test set up needs to be fixed, or because there is a bug in a class/function implementation. This is intentional so that you have additional coding practice opportunities. By reading and fixing these flaws you will gain additional practice coding, and can increase your understanding of how the data structures/algorithms we are studying behave. Although this is ungraded, it  it is recommended that you download these files and modify/fix each of them until all of the unit tests pass. Without a doubt, this will help you to succeed in the course. 
 
 ### Core classes (we will be using these again!)
 * stack.py - a basic Stack class with push and pop operations
