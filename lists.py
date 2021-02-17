@@ -261,6 +261,7 @@ class TestUnorderedList(unittest.TestCase):
         self.l1.remove(7)
         self.assertEqual(self.l1.convert2List(), [5, 15])
 
+
 class TestOrderedList(unittest.TestCase):
     """ TestCase class to hold individual unittests for our OrderedList """
 
