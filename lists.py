@@ -96,11 +96,14 @@ class UnorderedList:
 
     def append(self, data_to_append):
         """ add a node with its contents equal to data to the back of the list """
-        current = self.head
-        temp_node = Node(data_to_append)
-        while current.getNext() != None:
-            current = current.getNext()
-        current.setNext(temp_node)
+        if self.isEmpty():
+            self.add(data_to_append)
+        else:
+            current = self.head
+            temp_node = Node(data_to_append)
+            while current.getNext() != None:
+                current = current.getNext()
+            current.setNext(temp_node)
 
     def insert(self, pos, data_to_insert):
         """ insert a node with data_to_insert into position pos in the list """
@@ -199,79 +202,85 @@ class TestUnorderedList(unittest.TestCase):
     """ TestCase class to hold individual unittests for our UnorderedList """
 
     def testAddAndAppend(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
         # ADD NECESSARY LINE(S) TO MAKE THIS TEST PASS
-        self.assertEqual(self.l1.convert2List(), [5, 7, 15])
+        self.assertEqual(l1.convert2List(), [5, 7, 15])
 
     def testInsertFront(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.append(15)
-        self.l1.insert(0, 1)
-        self.assertEqual(self.l1.convert2List(), [1, 5, 7, 15])
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.append(15)
+        l1.insert(0, 1)
+        self.assertEqual(l1.convert2List(), [1, 5, 7, 15])
+
+    def testAppendToEmptyList(self):
+        l1 = UnorderedList()
+        l1.append(100)
+        data = l1.pop()
+        self.assertEqual(data, 100)
 
     def testInsertNearBack(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.append(15)
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.append(15)
         # ADD NECESSARY LINE(S) TO MAKE THIS TEST PASS
-        self.assertEqual(self.l1.convert2List(), [5, 7, 2, 15])
+        self.assertEqual(l1.convert2List(), [5, 7, 2, 15])
 
     def testInsertMiddle(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.append(15)
-        self.l1.insert(1, 2)
-        self.assertEqual(self.l1.convert2List(), [5, 2, 7, 15])
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.append(15)
+        l1.insert(1, 2)
+        self.assertEqual(l1.convert2List(), [5, 2, 7, 15])
 
     def testRemoveFromFront(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.append(15)
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.append(15)
         # ADD NECESSARY LINE(S) TO MAKE THIS TEST PASS
-        self.assertEqual(self.l1.convert2List(), [7, 15])
+        self.assertEqual(l1.convert2List(), [7, 15])
 
     def testRemoveFromBack(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.append(15)
-        self.l1.pop()
-        self.assertEqual(self.l1.convert2List(), [5, 7])
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.append(15)
+        l1.pop()
+        self.assertEqual(l1.convert2List(), [5, 7])
 
     def testRemoveFromMiddle(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.append(15)
-        self.l1.pop(1)
-        self.assertEqual(self.l1.convert2List(), [5, 15])
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.append(15)
+        l1.pop(1)
+        self.assertEqual(l1.convert2List(), [5, 15])
 
     def testRemoveSpecificData(self):
-        self.l1 = UnorderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.append(15)
-        self.l1.remove(7)
-        self.assertEqual(self.l1.convert2List(), [5, 15])
+        l1 = UnorderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.append(15)
+        l1.remove(7)
+        self.assertEqual(l1.convert2List(), [5, 15])
 
 
 class TestOrderedList(unittest.TestCase):
     """ TestCase class to hold individual unittests for our OrderedList """
 
     def testAdd(self):
-        self.l1 = OrderedList()
-        self.l1.add(7)
-        self.l1.add(5)
-        self.l1.add(6)
-        self.assertEqual(self.l1.convert2List(), [5, 6, 7])
+        l1 = OrderedList()
+        l1.add(7)
+        l1.add(5)
+        l1.add(6)
+        self.assertEqual(l1.convert2List(), [5, 6, 7])
 
-        
+
 if __name__ == '__main__':
     unittest.main()
